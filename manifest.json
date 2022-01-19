@@ -1,0 +1,21 @@
+{
+	"name": "Highlight!",
+	"description": "A Google Chrome extension!",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": ["contextMenus", "notifications", "storage", "activeTab", "scripting", "tabs"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"js": ["content.js"],
+			"css": ["content.css"],
+			"matches": ["<all_urls>" ]
+		}
+	]
+
+}

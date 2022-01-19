@@ -1,0 +1,5 @@
+.color-tag:hover {
+  height: 60px!important;
+  width: 60px!important;
+  transition: all .2s linear;
+}

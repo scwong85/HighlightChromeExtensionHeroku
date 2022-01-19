@@ -1,0 +1,13 @@
+body {
+    width: 250px;
+}
+
+#logout-btn {
+    display: none;
+}
+
+
+#highlight-wrapper {
+    font-family: monospace;
+    font-size: 20px;
+}
