@@ -1,9 +1,9 @@
 chrome.storage.onChanged.addListener(function (changes, namespace) {
 	for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-	  console.log(
-		`Storage key "${key}" in namespace "${namespace}" changed.`,
-		`Old value was "${oldValue}", new value is "${newValue}".`
-	  );
+	//   console.log(
+	// 	`Storage key "${key}" in namespace "${namespace}" changed.`,
+	// 	`Old value was "${oldValue}", new value is "${newValue}".`
+	//   );
 
 	  if (key === 'latestQuote' && newValue !== undefined) {
 		displayTooltip(selectedX, selectedY)
@@ -27,7 +27,6 @@ var selectedY = 0;
 
 document.onclick = triggerPopup;
 
-console.log('content script running', window.localStorage.getItem('hl_access'))
 
 const readLocalStorage = (key) => {
     return new Promise((resolve, reject) => {
@@ -51,7 +50,6 @@ function triggerPopup(e) {
 		selectedX = e.pageX;
 		selectedY = e.pageY;
 		log = `Position: (${e.pageX}, ${e.pageY})`;
-		console.log(log, selectedText, window.location.href, new Date());
 		createPopupNode(e.pageX, e.pageY, selectedText);
 		
 	}
